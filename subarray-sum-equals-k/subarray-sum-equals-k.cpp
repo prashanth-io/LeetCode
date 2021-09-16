@@ -1,8 +1,7 @@
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
-        
-        map<int,int>m;
+         map<int,int>m;
         int count=0;
         
         m.insert({0,1});
@@ -31,6 +30,7 @@ public:
         }
         
         return count;
+        
         
     }
 };
