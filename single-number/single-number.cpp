@@ -1,21 +1,13 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        unordered_map<int,int>map;
+        int xoran=0;
+        
         for(auto it:nums)
         {
-            map[it]++;
-            
+            xoran^=it;
         }
-        for(auto i=map.begin();i!=map.end();i++)
-        {
-            if(i->second==1)
-            {
-                return i->first;
-            }
-        }
-        return 0;
-        
+        return xoran;
     }
 };
 
