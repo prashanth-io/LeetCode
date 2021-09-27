@@ -2,33 +2,32 @@ class Solution {
 public:
     bool increasingTriplet(vector<int>& nums) {
         
-        
-        double a= 1000000000;
-        double b= 1000000000;
-        double c= 1000000000;
-        
-        
-        for(int i=0;i<nums.size();i++)
+        if(nums.size()<3)
         {
-            if(a>=nums[i])
-            {
-                a=nums[i];
-            }
-            else if(b>=nums[i])
-            {
-                b=nums[i];
-            }
-            
-            else
-            {
-                c=nums[i];
-            }
-            
-            if(a!=1000000000 && b!=1000000000 && c!=1000000000)
-            {
-                return true;
-            }
+            return false;
         }
-        return false;
+            int left=INT_MAX;
+            int mid=INT_MAX;
+            
+          
+            for(int i=0;i<nums.size();i++)
+            {
+               if(nums[i]<left)
+               {
+                   left=nums[i];
+                   
+               }
+                else if(left<nums[i] && nums[i]<mid)
+                {
+                    mid=nums[i];
+                }
+                else if(nums[i]>mid)
+                {
+                    return true;
+                }
+            }
+            return false;
+        
+         
     }
 };
